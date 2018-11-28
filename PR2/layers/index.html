@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Bootstrap Demo</title>
+
+  <!-- Bring in our bootstrap stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="/WeatherApp-master/static/css/style.css"> -->
+
+      <!-- Leaflet JS & CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+      integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+      crossorigin=""/>
+      <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+      integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+      crossorigin=""></script>
+  
+      <!-- d3 JavaScript -->
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+  
+      <!-- Our CSS -->
+      <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-default">
+        <div class="container-fluid navbar-custom">
+
+            <div class="row">
+                <nav class="navbar navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#codebrainery-toggle-nav" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                              </button>
+                              <div class="col-xs-9 phone-nav">
+                                    <!-- <a class="navbar-brand" href="#" id="home">Authored by: -->
+                                     <li class="dropdown">
+                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Authored By:<span class="caret"></span></a>  
+                                      <ul class="dropdown-menu">
+                                            <li><a href="temperature.html">Wenke Dahl</a></li>
+                                            <li><a href="humidity.html">Brian Jemison</a></li>
+                                            <li><a href="cloudiness.html">Arvinder Singh</a></li>
+                                            <li><a href="windspeed.html">Gordon Thomson</a></li>
+                                      </ul>
+                                    </a>
+                            
+                              
+            </div> 
+        </div>
+        <div class="collapse navbar-collapse" id="codebrainery-toggle-nav">
+                <ul class="nav navbar-nav navbar-right navbar-right-custom" >
+                  <li><a href="multi.html">Home</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="temperature.html">Temperature</a></li>
+                      <li><a href="humidity.html">Humidity</a></li>
+                      <li><a href="cloudiness.html">Cloudiness</a></li>
+                      <li><a href="windspeed.html">Windspeed</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="comparison.html">Comparison</a></li>
+                  <li><a href="data.html">Data</a></li>
+                </ul>
+              </div>
+        </div>
+        </nav>
+
+        <div>
+            <div class="col-md-2">
+                    <div class="icon sun-shower">
+                            <div class="cloud"></div>
+                            <div class="sun">
+                              <div class="rays"></div>
+                            </div>
+                            <div class="rain"></div>
+                          </div>
+                          
+                          <div class="icon thunder-storm">
+                            <div class="cloud"></div>
+                            <div class="lightning">
+                              <div class="bolt"></div>
+                              <div class="bolt"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="icon cloudy">
+                            <div class="cloud"></div>
+                            <div class="cloud"></div>
+                          </div>
+                          
+                          <div class="icon flurries">
+                            <div class="cloud"></div>
+                            <div class="snow">
+                              <div class="flake"></div>
+                              <div class="flake"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="icon sunny">
+                            <div class="sun">
+                              <div class="rays"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="icon rainy">
+                            <div class="cloud"></div>
+                            <div class="rain"></div>
+                          </div>
+                          
+                          
+            </div>
+        </div>
+        <!-- <div>
+            <div class="container">
+                    <div class="row">
+                            <div class="col-md-8">
+                                <article class="description.content">
+                                    <h1 class="description.header">
+                                        Weather / Environmental Mapping Project
+                                    </h1>
+                                    <hr class="description-hr"/>
+                                        <p>
+                                                Our objective was to creating an interactive visualization of the day's weather across the entire U.S. We then looked at how the varying weather impacted other environmental factors, such as, polution, cloudiness, etc.
+                                                To accomplish this, I utilized a <a href="https://pypi.python.org/pypi/citipy">[simple Python library]</a>, the <a href="https://openweathermap.org/api">[OpenWeatherMap API]</a>, and a little common sense to create a representative model of weather across world cities.
+                                        </p>
+                                        <p> -->
+                                            
+                                            <!-- <div class="container text-center"> -->
+                                                <!-- <h1 class="jumbotron">Map goes here</h1> -->
+                                                <div id="map"></div>
+                                                <!-- <script type="text/javascript" src="../static/js/app.js"></script> -->
+                                                <script type="text/javascript" src="../static/js/config1.js"></script>
+
+                                                <!-- JS -->
+                                                <!-- <script type="text/javascript" src="static/js/just-crime.js"></script> -->
+                                                <script type="text/javascript" src="../static/js/heatmap1.js"></script>
+
+                                                  <!-- Leaflet heatmap plugin-->
+                                                <script type="text/javascript" src="../static/js/leaflet-heat1.js"></script>
+                                                
+                                            <!-- <div> -->
+
+                                        </p>
+                                        <p>
+                                                The objective was to collect the data into a dataframe (below), and from this data to then build a series of scatter plots to showcase the following relationships:
+
+                                                (i) Temperature (F) vs. Latitude;
+                                                (ii) Humidity (%) vs. Latitude;
+                                                (iii) Cloudiness (%) vs. Latitude;
+                                                (iv) Wind Speed (mph) vs. Latitude.
+                                                
+                                        </p>
+                                        <p>
+
+                                        </p>
+                                        <img src="ImageFolder/dataframe.png" alt="" id="home">
+                                        <p>
+
+                                        </p>
+                                        
+                                </article>
+                                    
+      </div>
+
+      <div>
+            <div class="col-md-2">
+                    <div class="icon sun-shower">
+                            <div class="cloud"></div>
+                            <div class="sun">
+                              <div class="rays"></div>
+                            </div>
+                            <div class="rain"></div>
+                          </div>
+                          
+                          <div class="icon thunder-storm">
+                            <div class="cloud"></div>
+                            <div class="lightning">
+                              <div class="bolt"></div>
+                              <div class="bolt"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="icon cloudy">
+                            <div class="cloud"></div>
+                            <div class="cloud"></div>
+                          </div>
+                          
+                          <div class="icon flurries">
+                            <div class="cloud"></div>
+                            <div class="snow">
+                              <div class="flake"></div>
+                              <div class="flake"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="icon sunny">
+                            <div class="sun">
+                              <div class="rays"></div>
+                            </div>
+                          </div>
+                          
+                          <div class="icon rainy">
+                            <div class="cloud"></div>
+                            <div class="rain"></div>
+                          </div>
+                          
+                          <p>Based on <a href="https://dribbble.com/shots/2097042-Widget-Weather" target="_blank">Dribbble</a> by kylor</p>
+            </div>
+      </div>
+
+
+      <div>
+            <div class="col-md-6">
+                    <section id="imageNav-area">
+                        <div class="imageNav-content">
+
+                                <h1 class="imageNav-header">
+                                        Scatterplot       
+                                </h1>
+                                <hr/>
+                                <p>
+                                        The below graph show...
+                                        
+                                </p>
+                                <div id="images">
+                                    
+                                    <a href="cloudiness.html">
+                                        <img src="ImageFolder/cloudiness.png" alt="latitude vs cloudiness" class="imageNav-photo">
+                                    <a href="windspeed.html">
+                                        <img src="ImageFolder/windspeed.png" alt="latitude vs windspeed" class="imageNav-photo">
+                                    </a>
+                                </div>
+                        </div>
+                    </section>
+            </div>
+      </div>
+      <div>
+            <div class="col-md-6">
+                    <section id="imageNav-area">
+                        <div class="imageNav-content">
+                                <h1 class="imageNav-header">
+                                        Line Chart       
+                                </h1>
+                                <hr/>
+                                <div id="images">
+                                    <a href="temperature.html">
+                                        <img src="ImageFolder/temperature.png" alt="latitude vs temperature" class="imageNav-photo">
+                                    <a href="humidity.html">
+                                        <img src="ImageFolder/humidity.png" alt="latitude vs humidity" class="imageNav-photo">
+                                    </a>
+                                </div>
+                        </div>
+                    </section>
+            </div>
+      </div>
+    
+    <footer class="footer navbar-fixed-bottom">
+        <div class="two-toned-footer-color"></div>
+        <p class="text-muted text-muted-footer text-center">
+          &copy; Copyright Coding Bootcamp 2018:
+          Wenke Dahl, Brian Jemison, Arvinder Singh, & Gordon Thomson
+        </p>
+    </footer>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
